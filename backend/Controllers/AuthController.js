@@ -17,7 +17,7 @@ module.exports.Signup = async (req, res, next) => {
             secure: true,
             sameSite: "none",
             maxAge: 36000000,
-            domain: '.onrender.com',
+            domain: 'onrender.com',
         });
         res
             .status(201)
@@ -49,7 +49,7 @@ module.exports.Login = async (req, res, next) => {
             secure: true,
             sameSite: "none",
             maxAge: 36000000,
-            domain: '.onrender.com',
+            domain: 'onrender.com',
         });
         res.status(201).json({ message: "User logged in successfully", success: true });
         next()

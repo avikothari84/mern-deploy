@@ -13,7 +13,7 @@ const corsOptions = {
     origin: ["http://localhost:3000","https://sp-enterprises-ledger.onrender.com"] ,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
+    allowedHeaders: ["Content-Type", "Authorization", "Set-Cookie"],
 }
 app.use(express.json());
 app.use(cors(corsOptions));
