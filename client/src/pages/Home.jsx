@@ -14,7 +14,7 @@ const Home = () => {
     const [username, setUsername] = useState("");
     useEffect(() => {
         const verifyCookie = async () => {
-            if (!cookies.token) {
+            if (!cookies.jwt) {
                 navigate("/login");
             }
             const { data } = await axios.post(
@@ -33,9 +33,12 @@ const Home = () => {
         verifyCookie();
     }, [cookies, navigate, removeCookie]);
     const Logout = () => {
-        removeCookie("token");
+        removeCookie("jwt");
         navigate("/signup");
     };
+    useEffect(()=> {
+        console.log("updated token")
+    },[username])
     return (
         <>
             <div className="home_page">

@@ -11,7 +11,7 @@ module.exports.Signup = async (req, res, next) => {
         }
         const user = await User.create({ email, password, username, createdAt });
         const token = createSecretToken(user._id);
-        res.cookie("token", token, {
+        res.cookie("jwt", token, {
             withCredentials: true,
             httpOnly: true,
             secure: true,
@@ -43,7 +43,7 @@ module.exports.Login = async (req, res, next) => {
             return res.json({ message: 'Incorrect password or email' })
         }
         const token = createSecretToken(user._id);
-        res.cookie("token", token, {
+        res.cookie("jwt", token, {
             withCredentials: true,
             httpOnly: true,
             secure: true,
