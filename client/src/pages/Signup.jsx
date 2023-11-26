@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { BASE_BACKEND_URL } from '../config';
 
 const Signup = () => {
-    const apiUrl = `${BASE_BACKEND_URL}/someEndpoint`;
+  const apiUrl = `${BASE_BACKEND_URL}/signup`;
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -34,7 +34,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        apiUrl,
         {
           ...inputValue,
         },
