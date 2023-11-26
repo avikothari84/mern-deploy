@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { BASE_BACKEND_URL } from '../config';
 
 const Signup = () => {
+  axios.defaults.withCredentials = true;
   const apiUrl = `${BASE_BACKEND_URL}/signup`;
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({

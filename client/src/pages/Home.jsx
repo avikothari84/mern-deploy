@@ -7,6 +7,7 @@ import { BASE_BACKEND_URL } from '../config';
 
 
 const Home = () => {
+    axios.defaults.withCredentials = true;
     const apiUrl = `${BASE_BACKEND_URL}/`;
     const navigate = useNavigate();
     const [cookies, removeCookie] = useCookies([]);
